@@ -67,7 +67,6 @@ class Delivery_system:
 
             else:
                 print("The city is not in the system.")
-                return
         else:
             self.drivers[self.generateID()] = (name,start_city)
             
