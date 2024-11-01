@@ -52,6 +52,27 @@ class Delivery_system:
             for driver_id,(name,start_city) in self.drivers.items():
                 print(f"{driver_id},{name},{start_city}")
                 
+    def add_drivers(self):
+        name = input("Enter the driver's name: ")
+        start_city = input("Enter the driver's start city: ")
+        if start_city not in self.cities:
+            print("The city is not in the system. Do you want to add it? y/n")
+            choice = input("")
+            if choice.lower() == "y":
+                if city_name not in self.cities:
+                    self.cities[city_name] = []
+                    print(f"City {city_name} added to the system.")
+                else:
+                    print(f"City {city_name} already exists in the system.")
+
+            else:
+                print("The city is not in the system.")
+                return
+        else:
+            self.drivers[self.generateID()] = (name,start_city)
+            
+        
+                
     
                 
     
