@@ -2,8 +2,13 @@ class Delivery_system(self):
     def __init__(self):
         self.drivers = {}
         self.cities = {}
-        self.frivers_id = 1
-        
+        self.drivers_id_counter = 1
+    
+    def generateID(self):
+        driver_id = f"self.driver_id_counter : 03"
+        self.drivers_id_counter += 1
+        return self.drivers_id_counter
+    
     def main_menu(self):
         while True:
             print("Hello! Please enter:")
@@ -39,3 +44,12 @@ class Delivery_system(self):
                 break
             else:
                 print("Invalid choice. Please try again.")
+    
+    def view_drivers(self):
+        if not self.drivers:
+            print("There are no drivers in the system.")
+        else:
+            for driver_id,(name,start_city) in self.drivers.items():
+                print(f"{driver_id},{name},{start_city}")
+                
+    
