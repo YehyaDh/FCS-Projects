@@ -1,4 +1,4 @@
-class Delivery_system(self):
+class Delivery_system:
     def __init__(self):
         self.drivers = {}
         self.cities = {}
