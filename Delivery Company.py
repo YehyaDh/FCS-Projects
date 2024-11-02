@@ -70,15 +70,15 @@ class Delivery_system:
         else:
             self.drivers[self.generateID()] = (name,start_city)
             
-    def check_similar_drivers(self):
-        city_to_drivers = {}
-        for driver_id,details in self.drivers.items:
-            city = details(start_city)
-            if city not in city_to_drivers:
-                city_to_drivers[city] = []
-            city_to_drivers[city].append(details)
-        for city, driver_names in city_to_drivers.items():
-            print(f"{city}: {', '.join(driver_names)}")
+    def checkSimilarDrivers(self):
+        city_drivers={}
+        for driver_id,(name,startCity) in self.drivers.items():
+            if start_city not in city_drivers:
+                city_drivers[start_city] = []  # Initialize with an empty list if the city is not in the dictionary
+            city_drivers[start_city].append(name)  # Append the driver's name to the city's list of drivers
+        print("/n Similar drivers by city")
+        for city,drivers in city_drivers.items():
+            print(f"{city}: {','.join(drivers)}")
             
     def cities_menu(self):
         while True:
@@ -87,17 +87,20 @@ class Delivery_system:
             print("2. Search city")
             print("3. Print neighboring cities ")
             print("4. Print Drivers delivering to city ")
-        choice = input("Enter your choice: ")
-        if choice == 1:
-            self.show_cities()
-        elif choice == 2:
-            self.search_city()
-        elif choice == 3:
-            self.print_neighboring_cities()
-        elif choice == 4:
-            self.print_drivers()
-        else:
-            print("Invalid choice. Please try again.")
+            print("5. To go back to the main menu")
+            choice = input("Enter your choice: ")
+            if choice == 1:
+                self.show_cities()
+            elif choice == 2:
+                self.search_city()
+            elif choice == 3:
+                self.print_neighboring_cities()
+            elif choice == 4:
+                self.print_drivers()
+            elif choice == 5:
+                    break
+            else:
+                print("Invalid choice. Please try again.")
             
 
                 
