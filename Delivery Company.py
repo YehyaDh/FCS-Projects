@@ -80,7 +80,26 @@ class Delivery_system:
         for city, driver_names in city_to_drivers.items():
             print(f"{city}: {', '.join(driver_names)}")
             
-    
+    def cities_menu(self):
+        while True:
+            print("Hello! Please enter:")
+            print("1. Show cities")
+            print("2. Search city")
+            print("3. Print neighboring cities ")
+            print("4. Print Drivers delivering to city ")
+        choice = input("Enter your choice: ")
+        if choice == 1:
+            self.show_cities()
+        elif choice == 2:
+            self.search_city()
+        elif choice == 3:
+            self.print_neighboring_cities()
+        elif choice == 4:
+            self.print_drivers()
+        else:
+            print("Invalid choice. Please try again.")
+            
+
                 
         
                 
