@@ -70,6 +70,18 @@ class Delivery_system:
         else:
             self.drivers[self.generateID()] = (name,start_city)
             
+    def check_similar_drivers(self):
+        city_to_drivers = {}
+        for driver_id,details in self.drivers.items:
+            city = details(start_city)
+            if city not in city_to_drivers:
+                city_to_drivers[city] = []
+            city_to_drivers[city].append(details)
+        for city, driver_names in city_to_drivers.items():
+            print(f"{city}: {', '.join(driver_names)}")
+            
+    
+                
         
                 
     
